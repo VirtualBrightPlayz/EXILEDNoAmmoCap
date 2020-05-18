@@ -38,6 +38,14 @@ namespace NoAmmoCap
             }
         }
 
+        internal void Death(ref PlayerDeathEvent ev)
+        {
+            for (int i = 0; i < ev.Player.ammoBox.types.Length; i++)
+            {
+                ev.Player.ammoBox.SetOneAmount(i, PluginMain.ammo[ev.Player].ammo[i].ToString());
+            }
+        }
+
         internal void Spawn(PlayerSpawnEvent ev)
         {
             if (PluginMain.ammo.ContainsKey(ev.Player))

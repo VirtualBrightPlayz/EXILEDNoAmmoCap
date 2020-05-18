@@ -24,6 +24,7 @@ namespace NoAmmoCap
             Events.RoundRestartEvent -= PLEV.Reset;
             Events.ConsoleCommandEvent -= PLEV.PlyCmd;
             Events.PlayerSpawnEvent -= PLEV.Spawn;
+            Events.PlayerDeathEvent -= PLEV.Death;
             PLEV = null;
         }
 
@@ -37,6 +38,7 @@ namespace NoAmmoCap
             Events.RoundRestartEvent += PLEV.Reset;
             Events.ConsoleCommandEvent += PLEV.PlyCmd;
             Events.PlayerSpawnEvent += PLEV.Spawn;
+            Events.PlayerDeathEvent += PLEV.Death;
         }
 
         public override void OnReload()
